@@ -8,12 +8,10 @@
 
 namespace Jinya\Services;
 
-
 use Underscore\Types\Strings;
 
 class UrlGenerator implements UrlGeneratorInterface
 {
-
     /**
      * Generates a url from the given filename
      *
