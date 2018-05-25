@@ -10,5 +10,5 @@ Options +Indexes
 <IfModule mod_autoindex.c>
     IndexOptions IgnoreCase FancyIndexing FoldersFirst
     IndexOrderDefault Descending Name
-    IndexIgnore bin config src var vendor composer.json composer.lock symfony.lock
+    IndexIgnore bin config src var vendor composer.json composer.lock symfony.lock jenkins
 </IfModule>
