@@ -8,19 +8,20 @@
 
 namespace Jinya\Services\Cms;
 
-
 interface VersionScannerInterface
 {
-    public const VERSION_NIGHTLY = 'nightly';
-    public const VERSION_STABLE = 'stable';
     public const VERSION_EDGE = 'edge';
+
+    public const VERSION_NIGHTLY = 'nightly';
+
+    public const VERSION_STABLE = 'stable';
+
     public const VERSION_ALL = 'all';
 
     /**
      * Updates the versions for the given mode
      *
      * @param string $mode
-     * @return void
      */
     public function updateVersions(string $mode): void;
 }
