@@ -8,7 +8,6 @@
 
 namespace Jinya\Services;
 
-
 interface UrlGeneratorInterface
 {
     /**
