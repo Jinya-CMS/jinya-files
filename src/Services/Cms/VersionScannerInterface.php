@@ -13,6 +13,7 @@ interface VersionScannerInterface
 {
     public const VERSION_NIGHTLY = 'nightly';
     public const VERSION_STABLE = 'stable';
+    public const VERSION_EDGE = 'edge';
     public const VERSION_ALL = 'all';
 
     /**

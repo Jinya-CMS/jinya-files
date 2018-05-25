@@ -1,9 +1,14 @@
 Options +Indexes
 
-
 <IfModule mod_rewrite.c>
     RewriteEngine On
     
     RewriteCond %{HTTPS} !=on
     RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [R,L]
+</IfModule>
+
+<IfModule mod_autoindex.c>
+    IndexOptions IgnoreCase FancyIndexing FoldersFirst
+    IndexOrderDefault Descending Name
+    IndexIgnore bin config src var vendor composer.json composer.lock symfony.lock
 </IfModule>
