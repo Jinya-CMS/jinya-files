@@ -8,7 +8,6 @@
 
 namespace Jinya\Services\Cms;
 
-
 use Jinya\Services\UrlGeneratorInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Filesystem\Filesystem;
@@ -18,6 +17,7 @@ class VersionScanner implements VersionScannerInterface
 {
     /** @var UrlGeneratorInterface */
     private $urlGenerator;
+
     /** @var LoggerInterface */
     private $logger;
 
@@ -36,11 +36,10 @@ class VersionScanner implements VersionScannerInterface
      * Updates the versions for the given mode
      *
      * @param string $mode
-     * @return void
      */
     public function updateVersions(string $mode): void
     {
-        if ($mode === VersionScannerInterface::VERSION_ALL) {
+        if (VersionScannerInterface::VERSION_ALL === $mode) {
             $this->updateVersions(VersionScannerInterface::VERSION_NIGHTLY);
             $this->updateVersions(VersionScannerInterface::VERSION_STABLE);
         } else {
@@ -52,13 +51,13 @@ class VersionScanner implements VersionScannerInterface
 
             $finder = new Finder();
             $finder->filter(function (\SplFileInfo $file) {
-                return $file->getExtension() === 'zip';
+                return 'zip' === $file->getExtension();
             })->files()->sortByName()->in($directory);
             $this->logger->info(sprintf('Found %i files in directory %s', iterator_count($finder), $directory));
 
             $fs = new Filesystem();
             $archives = [
-                'cms' => []
+                'cms' => [],
             ];
 
             $baseUrl = $this->urlGenerator->generateUrl('cms' . DIRECTORY_SEPARATOR . $mode . DIRECTORY_SEPARATOR);

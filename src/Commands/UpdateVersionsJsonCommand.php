@@ -21,6 +21,7 @@ class UpdateVersionsJsonCommand extends ContainerAwareCommand
 
     /** @var VersionScannerInterface */
     private $versionScanner;
+
     /** @var LoggerInterface */
     private $logger;
 
