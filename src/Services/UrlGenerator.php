@@ -8,12 +8,10 @@
 
 namespace Jinya\Services;
 
-
 use Underscore\Types\Strings;
 
 class UrlGenerator implements UrlGeneratorInterface
 {
-
     /**
      * Generates a url from the given filename
      *
@@ -24,9 +22,9 @@ class UrlGenerator implements UrlGeneratorInterface
     {
         $target = Strings::replace($filename, '\\', '/');
         if (Strings::startsWith($target, '/')) {
-            $target = '/' . $target;
+            $target = '/'.$target;
         }
 
-        return getenv('FILES_BASE_URL') . $target;
+        return getenv('FILES_BASE_URL').$target;
     }
 }
