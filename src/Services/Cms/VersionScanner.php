@@ -39,7 +39,7 @@ class VersionScanner implements VersionScannerInterface
      */
     public function updateVersions(string $mode): void
     {
-        if ($mode === VersionScannerInterface::VERSION_ALL) {
+        if (VersionScannerInterface::VERSION_ALL === $mode) {
             $this->updateVersions(VersionScannerInterface::VERSION_EDGE);
             $this->updateVersions(VersionScannerInterface::VERSION_NIGHTLY);
             $this->updateVersions(VersionScannerInterface::VERSION_STABLE);
