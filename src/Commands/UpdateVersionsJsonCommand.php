@@ -48,7 +48,7 @@ class UpdateVersionsJsonCommand extends ContainerAwareCommand
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $mode = $input->getArgument('mode');
-        if (!in_array($mode, [VersionScannerInterface::VERSION_ALL, VersionScannerInterface::VERSION_STABLE, VersionScannerInterface::VERSION_NIGHTLY])) {
+        if (!in_array($mode, [VersionScannerInterface::VERSION_ALL, VersionScannerInterface::VERSION_STABLE, VersionScannerInterface::VERSION_NIGHTLY, VersionScannerInterface::VERSION_EDGE])) {
             $this->logger->error("The provided mode $mode is invalid");
         } else {
             $this->versionScanner->updateVersions($mode);
