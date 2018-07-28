@@ -48,12 +48,12 @@ func getVersionDump(filesBaseUrl string, mode string, files []os.FileInfo) *type
 
 	versionDump := new(types.VersionDump)
 	versionDump.Cms = map[string]string{}
-	jinyaBaseUrl := path.Join(filesBaseUrl, "cms", mode)
+	jinyaBaseUrl := filesBaseUrl + "cms/" + mode
 
 	log.Printf("Use %s as base url for files", jinyaBaseUrl)
 	for _, file := range files {
 		version := strings.TrimSuffix(file.Name(), filepath.Ext(file.Name()))
-		fileUrl := path.Join(jinyaBaseUrl, file.Name())
+		fileUrl := jinyaBaseUrl + "/" + file.Name()
 		versionDump.Cms[version] = fileUrl
 		log.Printf("Added version %s under url %s", version, fileUrl)
 	}
