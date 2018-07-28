@@ -17,7 +17,7 @@ jobs:
         persist_to_workspace:
           paths:
           - jinya-files
-          root: ~/dist
+          root: ~/
   deploy:
     docker:
       - image: circleci/golang
