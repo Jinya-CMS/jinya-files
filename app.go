@@ -15,7 +15,13 @@ func main() {
 	}
 
 	app := cli.NewApp()
-	app.Version = "2.0.2"
+	app.Flags = []cli.Flag{
+		cli.StringFlag{
+			Name:  "mode, m",
+			Usage: "Only create the version file for this version mode, either `stable`, `edge` or `nightly`",
+		},
+	}
+	app.Version = "2.1.0"
 	app.Name = "Jinya Files"
 	app.Usage = "This application creates the needed files for the Jinya Gallery CMS to run updates"
 	app.Action = func(c *cli.Context) {
