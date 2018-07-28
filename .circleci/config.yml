@@ -12,7 +12,7 @@ jobs:
             export GOARCH=386
             export GOOS=linux
             go get github.com/joho/godotenv github.com/urfave/cli
-            go build -i -o jinya-files .
+            go build -i -o /home/circleci/jinya-files .
       -
         persist_to_workspace:
           paths:
