@@ -15,7 +15,7 @@ func main() {
 	}
 
 	app := cli.NewApp()
-	app.Version = "2.0.1"
+	app.Version = "2.0.2"
 	app.Name = "Jinya Files"
 	app.Usage = "This application creates the needed files for the Jinya Gallery CMS to run updates"
 	app.Action = func(c *cli.Context) {
